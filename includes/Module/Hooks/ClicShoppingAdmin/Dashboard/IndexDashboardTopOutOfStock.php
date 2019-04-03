@@ -33,7 +33,7 @@
 
       $number_products_out_of_stock = $Qproducts->valueInt('count');
 
-      if ($number_products_out_of_stock > 0) {
+      if ($number_products_out_of_stock > 0 && STOCK_CHECK == 'true') {
         $text = CLICSHOPPING::getDef('text_number_products_out_of_stock');
         $text_view = CLICSHOPPING::getDef('text_view');
 
