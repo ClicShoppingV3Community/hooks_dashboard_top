@@ -28,12 +28,16 @@
     }
 
     public function execute() {
-      $Qproducts = $this->db->prepare('select count(*) as count from :table_products where products_quantity = 0');
+      $Qproducts = $this->db->prepare('select count(*) as count from :table_products 
+                                      where products_quantity <= :products_quantity
+                                      and products_quantity > 0
+                                     ');
+      $Qproducts->bindInt(':products_quantity', STOCK_REORDER_LEVEL);
       $Qproducts->execute();
 
       $number_products_out_of_stock = $Qproducts->valueInt('count');
 
-      if (($number_products_out_of_stock <= STOCK_REORDER_LEVEL) && STOCK_CHECK == 'true') {
+      if ($number_products_out_of_stock > 0 && STOCK_CHECK == 'true') {
         $text = CLICSHOPPING::getDef('text_number_products_stock_warning');
         $text_view = CLICSHOPPING::getDef('text_view');
 
