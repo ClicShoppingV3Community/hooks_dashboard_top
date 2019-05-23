@@ -1,13 +1,13 @@
 <?php
   /**
- *
- *  @copyright 2008 - https://www.clicshopping.org
- *  @Brand : ClicShopping(Tm) at Inpi all right Reserved
- *  @Licence GPL 2 & MIT
- *  @licence MIT - Portion of osCommerce 2.4
- *  @Info : https://www.clicshopping.org/forum/trademark/
- *
- */
+   *
+   * @copyright 2008 - https://www.clicshopping.org
+   * @Brand : ClicShopping(Tm) at Inpi all right Reserved
+   * @Licence GPL 2 & MIT
+   * @licence MIT - Portion of osCommerce 2.4
+   * @Info : https://www.clicshopping.org/forum/trademark/
+   *
+   */
 
   namespace ClicShopping\OM\Module\Hooks\ClicShoppingAdmin\Dashboard;
 
@@ -15,10 +15,12 @@
   use ClicShopping\OM\Registry;
   use ClicShopping\OM\HTML;
 
-  class IndexDashboardTopMembersB2B {
+  class IndexDashboardTopMembersB2B
+  {
     protected $db;
 
-    public function __construct() {
+    public function __construct()
+    {
 
       if (CLICSHOPPING::getSite() != 'ClicShoppingAdmin') {
         CLICSHOPPING::redirect();
@@ -27,7 +29,8 @@
       $this->db = Registry::get('Db');
     }
 
-    public function execute() {
+    public function execute()
+    {
       $Qmembes = $this->db->prepare('select count(*) as count from :table_customers where member_level = 0');
       $Qmembes->execute();
 

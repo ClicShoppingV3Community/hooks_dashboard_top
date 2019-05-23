@@ -1,13 +1,13 @@
 <?php
   /**
- *
- *  @copyright 2008 - https://www.clicshopping.org
- *  @Brand : ClicShopping(Tm) at Inpi all right Reserved
- *  @Licence GPL 2 & MIT
- *  @licence MIT - Portion of osCommerce 2.4
- *  @Info : https://www.clicshopping.org/forum/trademark/
- *
- */
+   *
+   * @copyright 2008 - https://www.clicshopping.org
+   * @Brand : ClicShopping(Tm) at Inpi all right Reserved
+   * @Licence GPL 2 & MIT
+   * @licence MIT - Portion of osCommerce 2.4
+   * @Info : https://www.clicshopping.org/forum/trademark/
+   *
+   */
 
   namespace ClicShopping\OM\Module\Hooks\ClicShoppingAdmin\Dashboard;
 
@@ -15,10 +15,12 @@
   use ClicShopping\OM\Registry;
   use ClicShopping\OM\HTML;
 
-  class IndexDashboardTopReviews {
+  class IndexDashboardTopReviews
+  {
     protected $db;
 
-    public function __construct() {
+    public function __construct()
+    {
 
       if (CLICSHOPPING::getSite() != 'ClicShoppingAdmin') {
         CLICSHOPPING::redirect();
@@ -27,8 +29,9 @@
       $this->db = Registry::get('Db');
     }
 
-    public function execute() {
-      $Qreviews = $this->db->prepare ('select count(*) as num_reviews 
+    public function execute()
+    {
+      $Qreviews = $this->db->prepare('select count(*) as num_reviews 
                                       from :table_reviews 
                                       where date_added >= (now() - INTERVAL 2 month) 
                                       and status > 0
