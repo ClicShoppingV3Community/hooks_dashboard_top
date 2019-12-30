@@ -31,8 +31,9 @@
 
     public function execute()
     {
-      $Qustomers = $this->db->prepare('select count(*) as count from :table_customers 
-                                      where customers_newsletter = 1
+      $Qustomers = $this->db->prepare('select count(*) as count 
+                                       from :table_customers 
+                                       where customers_newsletter = 1
                                      ');
       $Qustomers->execute();
 

@@ -31,7 +31,8 @@
 
     public function execute()
     {
-      $Qproducts = $this->db->prepare('select count(*) as count from :table_products 
+      $Qproducts = $this->db->prepare('select count(*) as count 
+                                      from :table_products 
                                       where products_quantity <= :products_quantity
                                       and products_quantity > 0
                                      ');

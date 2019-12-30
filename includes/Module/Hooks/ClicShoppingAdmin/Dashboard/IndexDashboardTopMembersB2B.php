@@ -31,7 +31,10 @@
 
     public function execute()
     {
-      $Qmembes = $this->db->prepare('select count(*) as count from :table_customers where member_level = 0');
+      $Qmembes = $this->db->prepare('select count(*) as count 
+                                    from :table_customers 
+                                    where member_level = 0
+                                    ');
       $Qmembes->execute();
 
       $number_members = $Qmembes->valueInt('count');
