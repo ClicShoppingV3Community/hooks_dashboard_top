@@ -49,7 +49,7 @@
       </div>
       <div class="col-md-12">
         <span h5 class="text-white">' . $number_products_expected . '</span>
-        <span ><small class="text-white">' . HTML::link(CLICSHOPPING::link(null, 'A&Report\StatsProductsExpected&StatsProductsExpected'), $text_view, 'class="text-white"') . '</small></span>
+        <span ><small class="text-white">' . HTML::link(CLICSHOPPING::link(null, 'A&Catalog\Products&StatsProductsExpected'), $text_view, 'class="text-white"') . '</small></span>
       </div>
     </div>
   </div>

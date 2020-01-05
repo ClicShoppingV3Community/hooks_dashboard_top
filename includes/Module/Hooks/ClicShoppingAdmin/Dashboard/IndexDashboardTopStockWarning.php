@@ -54,7 +54,7 @@
         </div>
         <div class="col-md-12">
           <span h5 class="text-white">' . $number_products_out_of_stock . '</span>
-          <span><small class="text-white">' . HTML::link(CLICSHOPPING::link(null, 'A&Report\StatsLowStock&StatsLowStock'), $text_view, 'class="text-white"') . '</small></span>
+          <span><small class="text-white">' . HTML::link(CLICSHOPPING::link(null, 'A&Catalog\Products&StatsProductsLowStock'), $text_view, 'class="text-white"') . '</small></span>
         </div>
       </div>
     </div>
