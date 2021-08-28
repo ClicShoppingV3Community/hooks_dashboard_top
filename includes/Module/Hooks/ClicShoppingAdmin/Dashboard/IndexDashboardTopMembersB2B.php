@@ -17,7 +17,7 @@
 
   class IndexDashboardTopMembersB2B
   {
-    protected $db;
+    protected mixed $db;
 
     public function __construct()
     {

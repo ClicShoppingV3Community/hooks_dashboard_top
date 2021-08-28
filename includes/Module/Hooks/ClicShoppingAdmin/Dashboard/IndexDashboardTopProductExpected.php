@@ -17,7 +17,7 @@
 
   class IndexDashboardTopProductExpected
   {
-    protected $db;
+    protected mixed $db;
 
     public function __construct()
     {

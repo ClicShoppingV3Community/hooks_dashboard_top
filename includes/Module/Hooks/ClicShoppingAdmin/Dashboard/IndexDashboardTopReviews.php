@@ -17,7 +17,7 @@
 
   class IndexDashboardTopReviews
   {
-    protected $db;
+    protected mixed $db;
 
     public function __construct()
     {
